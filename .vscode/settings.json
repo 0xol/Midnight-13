@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "MAP.C": "cpp",
+        "init.h": "c",
+        "texture.h": "c",
+        "graphics.h": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false,
+    "C_Cpp.errorSquiggles": "Disabled"
+}

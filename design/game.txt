@@ -1,0 +1,31 @@
+campaign:
+    defense points / factory building
+    attack points / offense, no building
+
+
+Materials:
+    
+    Tier 1
+
+    Iron plate      <- Iron ore
+    Lead plate      <- Lead ore
+    Copper plate    <- Copper ore
+    Silicon         <- Quartz
+
+    Tier 2
+
+    PCB             <- Silicon, Copper plate, Lead plate
+    Motor           <- Copper plate, Iron plate
+    Steel           <- Iron plate
+    Copper wire     <- Copper plate
+
+    Tier 3
+
+    Processor       <- Copper wire, Silicon, PCB
+    Solar panel     <- Copper Wire, Silicon, Steel, PCB
+
+
+"solar system":
+
+    Yellow Dwarf Star
+
