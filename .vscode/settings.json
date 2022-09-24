@@ -4,7 +4,9 @@
         "MAP.C": "cpp",
         "init.h": "c",
         "texture.h": "c",
-        "graphics.h": "c"
+        "graphics.h": "c",
+        "unit.h": "c",
+        "stdio.h": "c"
     },
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.errorSquiggles": "Disabled"

@@ -4,6 +4,8 @@
 #include "../include/texture.h"
 #include <stdio.h>
 #include "../include/menu.h"
+#include "../include/sandbox.h"
+#include "../include/player.h"
 
 unsigned int screenWidth = 1980;
 unsigned int screenHeight = 1080;
@@ -11,8 +13,6 @@ unsigned int screenHeight = 1080;
 Camera2D camera;
 
 int main(void) {
-
-    SetExitKey(KEY_NULL);
 
     unsigned int gameMode = 0;
     bool GameExit = false;
@@ -31,6 +31,9 @@ int main(void) {
     unitInit();
     textureInit();
     graphicsInit();
+    playerInit();
+
+    SetExitKey(KEY_NULL);
 
     while (!WindowShouldClose() & !GameExit) {
         BeginDrawing();
@@ -46,11 +49,10 @@ int main(void) {
             GameExit = true;
         }
 
-        /*
-        // DO MAIN LOOPS HERE
-        unitMain();
-        graphicsMain();
-        */
+        if (gameMode == sandboxMode) {
+            sandboxRun();
+        }
+
 
         EndMode2D();
         EndDrawing();

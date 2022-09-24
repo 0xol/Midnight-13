@@ -1,5 +1,4 @@
 CC = gcc
-
 CCFLAGS = -I C:\ray64\raylib-4.2.0\src -Iexternal -Os
 LDFLAGS = -lraylib -lopengl32 -lgdi32 -lwinmm -DPLATFORM_DESKTOP -Os
 
@@ -15,6 +14,8 @@ all:
 	$(CC) -c $(SRCDIR)/texture.c -o $(OBJDIR)/texture.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/map.c -o $(OBJDIR)/map.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/menu.c -o $(OBJDIR)/menu.o $(CCFLAGS)
+	$(CC) -c $(SRCDIR)/sandbox.c -o $(OBJDIR)/sandbox.o $(CCFLAGS)
+	$(CC) -c $(SRCDIR)/player.c -o $(OBJDIR)/player.o $(CCFLAGS)
 
 	$(CC) $(OBJDIR)/*.o -o main.exe $(LDFLAGS)
 

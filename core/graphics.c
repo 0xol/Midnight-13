@@ -4,6 +4,8 @@
 #include "../include/texture.h"
 #include <stdio.h>
 
+Font BIOS;
+
 void renderUnit(struct UNIT unit) {
     if (unit.TYPE == PLAYER)
     {
@@ -21,7 +23,7 @@ void renderAllUnits(void) {
 }
 
 void graphicsInit(void) {
-    
+    BIOS = LoadFont("textures/BIOS.ttf");
 }
 
 void graphicsMain(void) {

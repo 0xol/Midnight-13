@@ -10,5 +10,6 @@ extern unsigned int screenWidth;
 extern unsigned int screenHeight;
 
 extern Camera2D camera;
+extern Font BIOS;
 
 #endif

@@ -4,10 +4,6 @@
 struct UNIT allUnits[MAX_UNITS];
 
 void unitInit(void) {
-    unsigned int x = getFreeUnit();
-    
-    allUnits[x].TYPE = PLAYER;
-    allUnits[x].ROTATION = 0;
     
 }
 
