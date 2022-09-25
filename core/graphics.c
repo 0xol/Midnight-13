@@ -63,5 +63,7 @@ void playerRenderView(void) {
 void graphicsMain(void) {
     playerRenderView();
     renderAllUnits();
+    DrawFPS(allUnits[playerID].VECTOR.x - (screenWidth / 2), allUnits[playerID].VECTOR.y - (screenHeight / 2));
+
 }
 

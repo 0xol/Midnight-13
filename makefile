@@ -30,6 +30,6 @@ package: compile
 	
 	cp main.exe package/main.exe
 	cp textures package/textures -r
-	cd package && tar -cf midnight.zip *
+	cd package && tar -cf x64windows.zip *
 
 	
