@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "../include/map.h"
 #include <math.h>
+#include "../include/menu.h"
 
 Font BIOS;
 
@@ -63,7 +64,12 @@ void playerRenderView(void) {
 void graphicsMain(void) {
     playerRenderView();
     renderAllUnits();
-    DrawFPS(allUnits[playerID].VECTOR.x - (screenWidth / 2), allUnits[playerID].VECTOR.y - (screenHeight / 2));
+    //DrawFPS(allUnits[playerID].VECTOR.x - (screenWidth / 2), allUnits[playerID].VECTOR.y - (screenHeight / 2));
 
+    Vector2 pos;
+    pos.x = uix() - (screenWidth / 2);
+    pos.y = uiy() - (screenHeight / 2);
+
+    DrawTextEx(BIOS, TextFormat("%i FPS\n", GetFPS()), pos, 20, 0, GREEN);
 }
 

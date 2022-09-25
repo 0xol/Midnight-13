@@ -1,7 +1,9 @@
 #include "raylib.h"
 #include "../include/menu.h"
 #include "../include/graphics.h"
+#include "../include/player.h"
 #include <stdio.h>
+#include "../include/unit.h"
 
 Vector2 SandboxVec;
 
@@ -30,4 +32,23 @@ unsigned int mainMenu(void) {
     }
 
     return 0;
+}
+
+float uix(void) {
+    float x;
+
+    x = allUnits[playerID].VECTOR.x;
+    if (IsKeyDown(KEY_A)) {x +=  1;}
+    if (IsKeyDown(KEY_D)) {x += -1;}
+
+    return x;
+}
+
+float uiy(void) {
+    float y;
+    
+    y = allUnits[playerID].VECTOR.y;
+    if (IsKeyDown(KEY_W)) {y +=  1;}
+    if (IsKeyDown(KEY_S)) {y += -1;}
+    return y;
 }
