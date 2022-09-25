@@ -7,8 +7,8 @@
 #include "../include/sandbox.h"
 #include "../include/player.h"
 
-unsigned int screenWidth = 1980;
-unsigned int screenHeight = 1080;
+unsigned int screenWidth = 1280;
+unsigned int screenHeight = 720;
 
 Camera2D camera;
 

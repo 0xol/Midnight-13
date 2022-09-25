@@ -8,8 +8,7 @@
 unsigned int playerID;
 
 unsigned int playerMaxSpeed = 100;
-float playerSpeed;
-float acceleration;
+float acceleration = 1;
 
 void playerInit(void) {
     playerID = getFreeUnit();
@@ -18,20 +17,14 @@ void playerInit(void) {
 
 void playerMain(void) {
 
-    if (playerSpeed < playerMaxSpeed) {
-        if (IsKeyDown(KEY_W) | IsKeyDown(KEY_S) | IsKeyDown(KEY_A) | IsKeyDown(KEY_D)) {
-            acceleration = playerSpeed + playerMaxSpeed / 16;
-        }
-    }
-
-    if (IsKeyDown(KEY_W)) {allUnits[playerID].VECTOR.y += -acceleration;}
-    if (IsKeyDown(KEY_S)) {allUnits[playerID].VECTOR.y +=  acceleration;}
-    if (IsKeyDown(KEY_A)) {allUnits[playerID].VECTOR.x += -acceleration;}
-    if (IsKeyDown(KEY_D)) {allUnits[playerID].VECTOR.x +=  acceleration;}
-
-    if (playerSpeed != 0) {playerSpeed - 1;}
-
+    if (IsKeyDown(KEY_W)) {allUnits[playerID].VECTOR.y += -1;}
+    if (IsKeyDown(KEY_S)) {allUnits[playerID].VECTOR.y +=  1;}
+    if (IsKeyDown(KEY_A)) {allUnits[playerID].VECTOR.x += -1;}
+    if (IsKeyDown(KEY_D)) {allUnits[playerID].VECTOR.x +=  1;}
+    
     camera.target.x = allUnits[playerID].VECTOR.x;
     camera.target.y = allUnits[playerID].VECTOR.y;
-    
+
+    printf("X:%f Y:%f\n", allUnits[playerID].VECTOR.x, allUnits[playerID].VECTOR.y);
+
 }
