@@ -1,6 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#define playerViewDistance 85
+
 void playerInit(void);
 void playerMain(void);
 

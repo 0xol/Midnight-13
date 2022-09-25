@@ -7,7 +7,10 @@ LDFLAGS = -lraylib -lopengl32 -lgdi32 -lwinmm -DPLATFORM_DESKTOP -Os
 SRCDIR = core
 OBJDIR = bin
 
-all:
+all: compile
+	$(CC) $(OBJDIR)/*.o -o main.exe $(LDFLAGS)
+
+compile:
 	$(CC) -c $(SRCDIR)/init.c -o $(OBJDIR)/init.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/unit.c -o $(OBJDIR)/unit.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/graphics.c -o $(OBJDIR)/graphics.o $(CCFLAGS)
@@ -17,7 +20,16 @@ all:
 	$(CC) -c $(SRCDIR)/sandbox.c -o $(OBJDIR)/sandbox.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/player.c -o $(OBJDIR)/player.o $(CCFLAGS)
 
-	$(CC) $(OBJDIR)/*.o -o main.exe $(LDFLAGS)
-
 debug: all
 	main
+
+package: compile
+	$(CC) $(OBJDIR)/*.o -o main.exe $(LDFLAGS) -mwindows
+	rm package -r
+	mkdir package
+	
+	cp main.exe package/main.exe
+	cp textures package/textures -r
+	cd package && tar -cf midnight.zip *
+
+	

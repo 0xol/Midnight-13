@@ -6,5 +6,6 @@
 void textureInit(void);
 
 extern Texture2D PlayerTexture;
+extern Texture2D SandTexture;
 
 #endif

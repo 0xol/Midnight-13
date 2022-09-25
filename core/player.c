@@ -4,6 +4,7 @@
 #include "raylib.h"
 #include "../include/player.h"
 #include <stdio.h>
+#include "../include/map.h"
 
 unsigned int playerID;
 
@@ -13,6 +14,9 @@ float acceleration = 1;
 void playerInit(void) {
     playerID = getFreeUnit();
     allUnits[playerID].TYPE = PLAYER;
+
+    allUnits[playerID].VECTOR.x = MAPSIZE / 2 * 16;
+    allUnits[playerID].VECTOR.y = MAPSIZE / 2 * 16;
 }
 
 void playerMain(void) {
@@ -24,7 +28,4 @@ void playerMain(void) {
     
     camera.target.x = allUnits[playerID].VECTOR.x;
     camera.target.y = allUnits[playerID].VECTOR.y;
-
-    printf("X:%f Y:%f\n", allUnits[playerID].VECTOR.x, allUnits[playerID].VECTOR.y);
-
 }
