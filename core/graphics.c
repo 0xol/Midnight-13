@@ -18,7 +18,7 @@ void renderTile(struct TILE tile, unsigned int x, unsigned int y) {
     
     switch (tile.TYPE) {
     case SAND:
-        DrawTextureEx(SandTexture, tilePos, 0, 1, WHITE);
+        DrawTextureEx(SandTexture, tilePos, 0, 2, WHITE);
     break;
     
     default:
@@ -52,10 +52,10 @@ void playerRenderView(void) {
         for (unsigned int x = 0; x < playerViewDistance; x++)
         {
             
-            unsigned int tileX = (unsigned int)(allUnits[playerID].VECTOR.x / 16) - (playerViewDistance / 2) + x;
-            unsigned int tileY = (unsigned int)(allUnits[playerID].VECTOR.y / 16) - (playerViewDistance / 2) + y;
+            unsigned int tileX = (unsigned int)(allUnits[playerID].VECTOR.x / 32) - (playerViewDistance / 2) + x;
+            unsigned int tileY = (unsigned int)(allUnits[playerID].VECTOR.y / 32) - (playerViewDistance / 2) + y;
 
-            renderTile(BACKGROUND[tileX][tileY], tileX * 16, tileY * 16);
+            renderTile(BACKGROUND[tileX][tileY], tileX * 32, tileY * 32);
 
         }
     }

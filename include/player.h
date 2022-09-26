@@ -5,6 +5,7 @@
 
 void playerInit(void);
 void playerMain(void);
+void playerCameraUpdate(void);
 
 extern unsigned int playerID;
 

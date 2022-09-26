@@ -15,8 +15,15 @@ void playerInit(void) {
     playerID = getFreeUnit();
     allUnits[playerID].TYPE = PLAYER;
 
-    allUnits[playerID].VECTOR.x = MAPSIZE / 2 * 16;
-    allUnits[playerID].VECTOR.y = MAPSIZE / 2 * 16;
+    allUnits[playerID].VECTOR.x = MAPSIZE / 2 * 32;
+    allUnits[playerID].VECTOR.y = MAPSIZE / 2 * 32;
+}
+
+void playerCameraUpdate(void) {
+
+    camera.target.x = allUnits[playerID].VECTOR.x;
+    camera.target.y = allUnits[playerID].VECTOR.y;
+
 }
 
 void playerMain(void) {
@@ -26,6 +33,5 @@ void playerMain(void) {
     if (IsKeyDown(KEY_A)) {allUnits[playerID].VECTOR.x += -1;}
     if (IsKeyDown(KEY_D)) {allUnits[playerID].VECTOR.x +=  1;}
     
-    camera.target.x = allUnits[playerID].VECTOR.x;
-    camera.target.y = allUnits[playerID].VECTOR.y;
+    playerCameraUpdate();
 }

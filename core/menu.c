@@ -9,17 +9,17 @@ Vector2 SandboxVec;
 
 unsigned int mainMenu(void) {
 
-    Vector2 actualMousePos;
+    playerCameraUpdate();
 
-    actualMousePos.x = camera.offset.x - GetMousePosition().x;
-    actualMousePos.y = camera.offset.y - GetMousePosition().y;
+    //actualMousePos.x = camera.offset.x - GetMousePosition().x;
+    //actualMousePos.y = camera.offset.y - GetMousePosition().y;
 
     Rectangle Sandbox;
     Sandbox.width = 200;
     Sandbox.height = 50;
 
-    Sandbox.x = camera.target.x - (Sandbox.width / 2);
-    Sandbox.y = camera.target.y - (Sandbox.height / 2) - 200;
+    Sandbox.x = uix() - (Sandbox.width / 2);
+    Sandbox.y = uiy() - (Sandbox.height / 2) - 200;
     
     SandboxVec.x = Sandbox.x;
     SandboxVec.y = Sandbox.y;
@@ -27,7 +27,7 @@ unsigned int mainMenu(void) {
     DrawRectangle(Sandbox.x, Sandbox.y, Sandbox.width, Sandbox.height, RED);
     DrawTextEx(BIOS, "SANDBOX", SandboxVec, 40, 0, WHITE);
 
-    if(CheckCollisionPointRec(actualMousePos, Sandbox) & IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+    if(CheckCollisionPointRec(actualMousePos(), Sandbox) & IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
         return sandboxMode;
     }
 
@@ -51,4 +51,14 @@ float uiy(void) {
     if (IsKeyDown(KEY_W)) {y +=  1;}
     if (IsKeyDown(KEY_S)) {y += -1;}
     return y;
+}
+
+Vector2 actualMousePos(void) {
+
+    Vector2 pos;
+
+    pos.x = uix() + GetMousePosition().x - (screenWidth / 2);
+    pos.y = uiy() + GetMousePosition().y - (screenHeight / 2);
+
+    return pos;
 }
