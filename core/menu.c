@@ -19,7 +19,7 @@ unsigned int mainMenu(void) {
     Sandbox.height = 50;
 
     Sandbox.x = camera.target.x - (Sandbox.width / 2);
-    Sandbox.y = camera.target.y - (Sandbox.height / 2);
+    Sandbox.y = camera.target.y - (Sandbox.height / 2) - 200;
     
     SandboxVec.x = Sandbox.x;
     SandboxVec.y = Sandbox.y;
