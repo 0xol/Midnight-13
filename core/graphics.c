@@ -11,7 +11,7 @@
 Font BIOS;
 
 void renderTile(struct TILE tile, unsigned int x, unsigned int y) {
-    
+
     Vector2 tilePos;
     tilePos.x = x;
     tilePos.y = y;
