@@ -6,7 +6,9 @@
         "texture.h": "c",
         "graphics.h": "c",
         "unit.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "menu.h": "c",
+        "raylib.h": "c"
     },
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.errorSquiggles": "Disabled"

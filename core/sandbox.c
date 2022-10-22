@@ -5,6 +5,7 @@
 #include "raylib.h"
 #include "../include/player.h"
 #include "../include/map.h"
+#include "../include/ui.h"
 
 int genDone = 0;
 
@@ -19,5 +20,6 @@ void sandboxRun(void) {
     unitMain();
     playerMain();
     graphicsMain();
+    sandboxUI();
 
 }

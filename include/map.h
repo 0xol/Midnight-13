@@ -11,6 +11,8 @@ extern struct TILE BACKGROUND[MAPSIZE][MAPSIZE];
 
 #define ERROR 0
 #define SAND 1
+#define STONE 2
+#define AIR 3
 
 void sandboxGen(void);
 

@@ -1,5 +1,5 @@
 CC = gcc
-CCFLAGS = -I C:\ray64\raylib-4.2.0\src -Iexternal -Os
+CCFLAGS = -I C:\ray64\raylib-4.2.0\src -Iexternal -Os -I include -lstdc++make
 LDFLAGS = -lraylib -lopengl32 -lgdi32 -lwinmm -DPLATFORM_DESKTOP -Os
 
 #append " -mwindows" to linker flags for release builds / disables console
@@ -19,6 +19,7 @@ compile:
 	$(CC) -c $(SRCDIR)/menu.c -o $(OBJDIR)/menu.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/sandbox.c -o $(OBJDIR)/sandbox.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/player.c -o $(OBJDIR)/player.o $(CCFLAGS)
+	$(CC) -c $(SRCDIR)/ui.c -o $(OBJDIR)/ui.o $(CCFLAGS)
 
 debug: all
 	main
