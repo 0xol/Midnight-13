@@ -1,4 +1,5 @@
 CC = gcc
+C++ = g++
 CCFLAGS = -I C:\ray64\raylib-4.2.0\src -Iexternal -Os -I include -lstdc++make
 LDFLAGS = -lraylib -lopengl32 -lgdi32 -lwinmm -DPLATFORM_DESKTOP -Os
 
@@ -20,6 +21,7 @@ compile:
 	$(CC) -c $(SRCDIR)/sandbox.c -o $(OBJDIR)/sandbox.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/player.c -o $(OBJDIR)/player.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/ui.c -o $(OBJDIR)/ui.o $(CCFLAGS)
+	$(C++) -c $(SRCDIR)/power.cpp -o $(OBJDIR)/power.o $(CCFLAGS)
 
 debug: all
 	main
