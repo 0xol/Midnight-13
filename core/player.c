@@ -33,9 +33,11 @@ void playerMain(void) {
     if (IsKeyDown(KEY_A)) {allUnits[playerID].VECTOR.x += -playerSpeed;}
     if (IsKeyDown(KEY_D)) {allUnits[playerID].VECTOR.x +=  playerSpeed;}
 
-    printf("%f %f \n", allUnits[playerID].VECTOR.x / 32, allUnits[playerID].VECTOR.y / 32);
+    //printf("%f %f \n", allUnits[playerID].VECTOR.x / 32, allUnits[playerID].VECTOR.y / 32);
     
     playerCameraUpdate();
 
-    printf("%i\n", BACKGROUND[12][6].TYPE);
+    //printf("%i\n", BACKGROUND[12][6].TYPE);
+
+
 }

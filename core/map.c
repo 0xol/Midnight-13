@@ -8,6 +8,7 @@ void sandboxGen(void) {
         for (unsigned int x = 0; x != MAPSIZE; x++)
         {
             BACKGROUND[x][y].TYPE = SAND;
+            printf("%i %i\n", x, y);
         }
         
     }

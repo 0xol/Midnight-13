@@ -51,19 +51,15 @@ void playerRenderView(void) {
     {
         for (unsigned int x = 0; x < playerViewDistance; x++)
         {
-            
             unsigned int tileX = (unsigned int)(allUnits[playerID].VECTOR.x / 32) - (playerViewDistance / 2) + x;
             unsigned int tileY = (unsigned int)(allUnits[playerID].VECTOR.y / 32) - (playerViewDistance / 2) + y;
 
-            if (tileX > MAPSIZE || tileY > MAPSIZE || tileX < 0 || tileY < 0) {
+            if (tileX > MAPSIZE - 1 || tileY > MAPSIZE - 1 || tileX < 0 || tileY < 0) {
                 DrawRectangle(tileX * 32, tileY * 32, 32, 32, BLACK);
             }
             else {
                 renderTile(BACKGROUND[tileX][tileY], tileX * 32, tileY * 32);
             }
-
-            
-
         }
     }
 }
