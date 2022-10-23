@@ -55,7 +55,14 @@ void playerRenderView(void) {
             unsigned int tileX = (unsigned int)(allUnits[playerID].VECTOR.x / 32) - (playerViewDistance / 2) + x;
             unsigned int tileY = (unsigned int)(allUnits[playerID].VECTOR.y / 32) - (playerViewDistance / 2) + y;
 
-            renderTile(BACKGROUND[tileX][tileY], tileX * 32, tileY * 32);
+            if (tileX > MAPSIZE || tileY > MAPSIZE || tileX < 0 || tileY < 0) {
+                DrawRectangle(tileX * 32, tileY * 32, 32, 32, BLACK);
+            }
+            else {
+                renderTile(BACKGROUND[tileX][tileY], tileX * 32, tileY * 32);
+            }
+
+            
 
         }
     }

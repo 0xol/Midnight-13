@@ -38,8 +38,8 @@ float uix(void) {
     float x;
 
     x = allUnits[playerID].VECTOR.x;
-    if (IsKeyDown(KEY_A)) {x +=  1;}
-    if (IsKeyDown(KEY_D)) {x += -1;}
+    if (IsKeyDown(KEY_A)) {x +=  playerSpeed;}
+    if (IsKeyDown(KEY_D)) {x += -playerSpeed;}
 
     return x;
 }
@@ -48,8 +48,8 @@ float uiy(void) {
     float y;
     
     y = allUnits[playerID].VECTOR.y;
-    if (IsKeyDown(KEY_W)) {y +=  1;}
-    if (IsKeyDown(KEY_S)) {y += -1;}
+    if (IsKeyDown(KEY_W)) {y +=  playerSpeed;}
+    if (IsKeyDown(KEY_S)) {y += -playerSpeed;}
     return y;
 }
 

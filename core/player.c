@@ -28,10 +28,14 @@ void playerCameraUpdate(void) {
 
 void playerMain(void) {
 
-    if (IsKeyDown(KEY_W)) {allUnits[playerID].VECTOR.y += -1;}
-    if (IsKeyDown(KEY_S)) {allUnits[playerID].VECTOR.y +=  1;}
-    if (IsKeyDown(KEY_A)) {allUnits[playerID].VECTOR.x += -1;}
-    if (IsKeyDown(KEY_D)) {allUnits[playerID].VECTOR.x +=  1;}
+    if (IsKeyDown(KEY_W)) {allUnits[playerID].VECTOR.y += -playerSpeed;}
+    if (IsKeyDown(KEY_S)) {allUnits[playerID].VECTOR.y +=  playerSpeed;}
+    if (IsKeyDown(KEY_A)) {allUnits[playerID].VECTOR.x += -playerSpeed;}
+    if (IsKeyDown(KEY_D)) {allUnits[playerID].VECTOR.x +=  playerSpeed;}
+
+    printf("%f %f \n", allUnits[playerID].VECTOR.x / 32, allUnits[playerID].VECTOR.y / 32);
     
     playerCameraUpdate();
+
+    printf("%i\n", BACKGROUND[12][6].TYPE);
 }
