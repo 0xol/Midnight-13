@@ -1,5 +1,7 @@
-#include "../include/unit.h"
+#include <unit.h>
 #include <stdio.h>
+#include <map.h>
+#include <player.h>
 
 struct UNIT allUnits[MAX_UNITS];
 
@@ -18,5 +20,14 @@ unsigned int getFreeUnit(void) {
         {
             return i;
         }
+    }
+}
+
+bool checkIfOutOfBounds(unsigned int unitId) {
+    if (allUnits[unitId].VECTOR.x > MAPSIZE * 32 - 32 || allUnits[unitId].VECTOR.y > MAPSIZE * 32 - 32 || allUnits[unitId].VECTOR.x < 0 || allUnits[unitId].VECTOR.y < 0) {
+        return true;        
+    }
+    else {
+        return false;
     }
 }

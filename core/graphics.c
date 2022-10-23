@@ -37,7 +37,18 @@ void renderUnit(struct UNIT unit) {
 
 void renderAllUnits(void) {
     for (unsigned int i = 0; i < MAX_UNITS; i++) {
-        renderUnit(allUnits[i]);
+        if (!checkIfOutOfBounds(i))
+        {
+            renderUnit(allUnits[i]);
+        }
+        else {
+            //should change to switch in future
+            if (allUnits[i].VECTOR.x > MAPSIZE * 32 - 32)   {allUnits[i].VECTOR.x -= allUnits[i].VECTOR.x - (MAPSIZE * 32 - 32);}
+            if (allUnits[i].VECTOR.x < 0)                   {allUnits[i].VECTOR.x = 0;}
+            if (allUnits[i].VECTOR.y > MAPSIZE * 32 - 32)   {allUnits[i].VECTOR.y -= allUnits[i].VECTOR.y - (MAPSIZE * 32 - 32);}
+            if (allUnits[i].VECTOR.y < 0)                   {allUnits[i].VECTOR.y = 0;}
+            renderUnit(allUnits[i]);
+        }
     }
     
 }
