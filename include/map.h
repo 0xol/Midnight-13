@@ -1,7 +1,7 @@
 #ifndef MAP_H
 #define MAP_H
 
-#define MAPSIZE 12
+#define MAPSIZE 640
 
 struct TILE {
     unsigned int TYPE;

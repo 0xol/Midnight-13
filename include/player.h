@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #define playerViewDistance 85
-#define playerSpeed 1
+#define playerSpeed 10
 
 void playerInit(void);
 void playerMain(void);

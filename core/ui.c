@@ -7,11 +7,22 @@
 
 Vector2 PowerPos;
 Rectangle PowerRectangle;
+
+#define NOTOPEN 0
+#define POWER 1
+
+unsigned int isMenuOpen;
+
+void drawPowerMenu(void) {
+    if (isMenuOpen == POWER) {
+        
+    }
     
+}
 
 void sandboxUI(void) {
     DrawRectangle(uix() + (screenWidth / 2) - BUILDMENUWIDTH, uiy() - (screenHeight / 2), BUILDMENUWIDTH, screenHeight, BLACK);
-    
+
     PowerPos.x = uix() + (screenWidth / 2) - BUILDMENUWIDTH;
     PowerPos.y = uiy() - (screenHeight / 2);
     PowerRectangle.x = uix() + (screenWidth / 2) - BUILDMENUWIDTH;
@@ -21,9 +32,9 @@ void sandboxUI(void) {
 
     DrawTextureEx(PowerTexture, PowerPos, 0, 2, WHITE);
 
-    if (CheckCollisionPointRec(actualMousePos(), PowerRectangle) & IsMouseButtonDown(MOUSE_BUTTON_LEFT))
-    {
-        printf("troll");
-    }
+    if (CheckCollisionPointRec(actualMousePos(), PowerRectangle) && IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {isMenuOpen = POWER;}
+
+    if (IsKeyPressed(KEY_ESCAPE)) {isMenuOpen = NOTOPEN;}
+    
     
 }

@@ -1,7 +1,7 @@
 CC = gcc
 C++ = g++
 CCFLAGS = -I C:\ray64\raylib-4.2.0\src -Iexternal -Os -I include -lstdc++make
-LDFLAGS = -lraylib -lopengl32 -lgdi32 -lwinmm -DPLATFORM_DESKTOP -Os
+LDFLAGS = -lraylib -lopengl32 -lws2_32 -lgdi32 -lwinmm -DPLATFORM_DESKTOP -Os
 
 #append " -mwindows" to linker flags for release builds / disables console
 
@@ -22,6 +22,7 @@ compile:
 	$(CC) -c $(SRCDIR)/player.c -o $(OBJDIR)/player.o $(CCFLAGS)
 	$(CC) -c $(SRCDIR)/ui.c -o $(OBJDIR)/ui.o $(CCFLAGS)
 	$(C++) -c $(SRCDIR)/power.cpp -o $(OBJDIR)/power.o $(CCFLAGS)
+	$(CC) -c $(SRCDIR)/netlib/dyad.c -o $(OBJDIR)/dyad.o $(CCFLAGS)
 
 debug: all
 	main

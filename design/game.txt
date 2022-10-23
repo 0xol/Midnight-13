@@ -1,3 +1,11 @@
+maps:
+    planets
+    space stations
+    moons
+
+    split maps into smaller quadrants
+    640 x 640 works well for maps (smaller size decreases mem usage and cpu usage)
+
 campaign:
     defense points / factory building
     attack points / offense, no building

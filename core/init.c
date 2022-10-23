@@ -14,6 +14,9 @@ Camera2D camera;
 
 int main(void) {
 
+    printf("networking library source can be found at https://github.com/rxi/dyad/blob/master/LICENSE\n");
+    printf("I <3 dyad\n");
+
     unsigned int gameMode = 0;
     bool GameExit = false;
 
