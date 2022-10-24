@@ -11,14 +11,17 @@ Rectangle PowerRectangle;
 #define NOTOPEN 0
 #define POWER 1
 
+Color sideMenuColour;
+
 unsigned int isMenuOpen;
 
-void drawPowerMenu(void) {
-    if (isMenuOpen == POWER) {
-        
-    }
-    
+void drawSideBuildMEnu(void) {
+    DrawRectangle(uix() + (screenWidth / 2) - (BUILDMENUWIDTH + SELECTMENUWIDTH), uiy() - (screenHeight / 2), SELECTMENUWIDTH, screenHeight, sideMenuColour);
 }
+
+void drawPowerMenu(void) {if (isMenuOpen == POWER) {
+    drawSideBuildMEnu();
+}}
 
 void sandboxUI(void) {
     DrawRectangle(uix() + (screenWidth / 2) - BUILDMENUWIDTH, uiy() - (screenHeight / 2), BUILDMENUWIDTH, screenHeight, BLACK);
@@ -33,8 +36,7 @@ void sandboxUI(void) {
     DrawTextureEx(PowerTexture, PowerPos, 0, 2, WHITE);
 
     if (CheckCollisionPointRec(actualMousePos(), PowerRectangle) && IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {isMenuOpen = POWER;}
-
     if (IsKeyPressed(KEY_ESCAPE)) {isMenuOpen = NOTOPEN;}
     
-    
+    drawPowerMenu();
 }
