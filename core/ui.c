@@ -15,12 +15,12 @@ Color sideMenuColour;
 
 unsigned int isMenuOpen;
 
-void drawSideBuildMEnu(void) {
+void drawSideBuildMenu(void) {
     DrawRectangle(uix() + (screenWidth / 2) - (BUILDMENUWIDTH + SELECTMENUWIDTH), uiy() - (screenHeight / 2), SELECTMENUWIDTH, screenHeight, sideMenuColour);
 }
 
 void drawPowerMenu(void) {if (isMenuOpen == POWER) {
-    drawSideBuildMEnu();
+    drawSideBuildMenu();
 }}
 
 void sandboxUI(void) {
