@@ -4,7 +4,9 @@
 #include "raylib.h"
 #include "../include/player.h"
 #include <stdio.h>
-#include "../include/map.h"
+#include <map.h>
+#include <menu.h>
+#include <graphics.h>
 
 unsigned int playerID;
 

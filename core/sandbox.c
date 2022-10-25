@@ -13,6 +13,7 @@ void sandboxRun(void) {
     
     if (genDone == 0) {
         sandboxGen();
+        DisableCursor();
         genDone = 1;
     }
     

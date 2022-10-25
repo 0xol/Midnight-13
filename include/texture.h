@@ -1,7 +1,7 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
-#include "raylib.h"
+#include <raylib.h>
 
 void textureInit(void);
 
