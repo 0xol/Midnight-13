@@ -33,6 +33,14 @@ void playerMain(void) {
     if (IsKeyDown(KEY_A)) {allUnits[playerID].VECTOR.x += -playerSpeed;}
     if (IsKeyDown(KEY_D)) {allUnits[playerID].VECTOR.x +=  playerSpeed;}
 
+    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
+        if ((int)actualMousePos().x / TILESIZE <= MAPSIZE & (int)actualMousePos().y / TILESIZE <= MAPSIZE)
+        {
+            BACKGROUND[(int)actualMousePos().x / TILESIZE][(int)actualMousePos().y / TILESIZE].TYPE = STONE;
+        }
+    }
+    
+
     // print player pos
     //printf("%f %f \n", allUnits[playerID].VECTOR.x / 32, allUnits[playerID].VECTOR.y / 32);
     

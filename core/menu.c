@@ -54,7 +54,6 @@ float uiy(void) {
 }
 
 Vector2 actualMousePos(void) {
-
     Vector2 pos;
 
     pos.x = uix() + GetMousePosition().x - (screenWidth / 2);

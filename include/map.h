@@ -2,6 +2,7 @@
 #define MAP_H
 
 #define MAPSIZE 640
+#define TILESIZE 32
 
 struct TILE {
     unsigned int TYPE;

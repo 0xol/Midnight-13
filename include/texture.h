@@ -8,5 +8,7 @@ void textureInit(void);
 extern Texture2D PlayerTexture;
 extern Texture2D SandTexture;
 extern Texture2D PowerTexture;
+extern Texture2D StoneTexture;
+
 
 #endif

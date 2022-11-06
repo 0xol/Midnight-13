@@ -21,6 +21,10 @@ void renderTile(struct TILE tile, unsigned int x, unsigned int y) {
         DrawTextureEx(SandTexture, tilePos, 0, 2, WHITE);
     break;
     
+    case STONE:
+        DrawTextureEx(StoneTexture, tilePos, 0, 2, WHITE);
+    break;
+    
     default:
         
     break;
