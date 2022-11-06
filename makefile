@@ -4,3 +4,7 @@ all:
 #debug using sh not cmd
 debugsh: all
 	./midnight
+
+debugwin:
+	build
+	midnight

@@ -6,6 +6,7 @@
 #include "../include/menu.h"
 #include "../include/sandbox.h"
 #include "../include/player.h"
+#include <surface.h>
 
 unsigned int screenWidth = 1240;
 unsigned int screenHeight = 720;
@@ -35,6 +36,7 @@ int main(void) {
     textureInit();
     graphicsInit();
     playerInit();
+    surfaceInit();
 
     SetExitKey(KEY_NULL);
 

@@ -6,6 +6,8 @@ import platform
 import build.build as build
 
 if platform.system() == "Linux":
-    build.build()
+    build.buildLinux()
+if platform.system() == "Windows":
+    build.buildWin()
 else:
     print("OS not supported\nCreate a github issue and ill try and add support")
