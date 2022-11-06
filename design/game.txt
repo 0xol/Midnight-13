@@ -4,7 +4,7 @@ maps:
     moons
 
     split maps into smaller quadrants
-    640 x 640 works well for maps (smaller size decreases mem usage and cpu usage)
+    640 x 640 works well for quadrants (smaller size decreases mem usage and cpu usage)
 
 campaign:
     defense points / factory building

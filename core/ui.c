@@ -1,9 +1,10 @@
 #include <ui.h>
 #include <graphics.h>
 #include <raylib.h>
-#include <menu.h>
+#include <ui.h>
 #include <texture.h>
 #include <stdio.h>
+#include <menu.h>
 
 Vector2 PowerPos;
 Rectangle PowerRectangle;
@@ -15,12 +16,32 @@ Color sideMenuColour;
 
 unsigned int isMenuOpen;
 
+Rectangle drawBuildMenuIcon(Texture2D texture, unsigned int slot) {
+    //returns Rectangle for collison detection
+    
+    Vector2 pos;
+    Rectangle rec;
+
+    pos.x = uix() + (screenWidth / 2) - (BUILDMENUWIDTH + SELECTMENUWIDTH);
+    pos.y = uiy() - (screenHeight / 2) + (35 * slot);
+
+    rec.x = pos.x;
+    rec.y = pos.y;
+    rec.width = 32;
+    rec.height = 32;
+    
+    DrawTextureEx(texture, pos, 0, 2, WHITE);
+    return rec;
+}
+
 void drawSideBuildMenu(void) {
     DrawRectangle(uix() + (screenWidth / 2) - (BUILDMENUWIDTH + SELECTMENUWIDTH), uiy() - (screenHeight / 2), SELECTMENUWIDTH, screenHeight, sideMenuColour);
 }
 
 void drawPowerMenu(void) {if (isMenuOpen == POWER) {
     drawSideBuildMenu();
+    drawBuildMenuIcon(RtgTexture, 0);
+    drawBuildMenuIcon(PowerTexture, 1);
 }}
 
 void sandboxUI(void) {

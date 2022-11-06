@@ -6,19 +6,18 @@
 #include "../include/player.h"
 #include "../include/map.h"
 #include "../include/ui.h"
+#include <build.h>
 
 int genDone = 0;
 
 void sandboxRun(void) {
     
-    if (genDone == 0) {
-        sandboxGen();
-        genDone = 1;
-    }
+    if (genDone == 0) {sandboxGen();genDone = 1;}
 
     unitMain();
     playerMain();
     graphicsMain();
+    buildMain();
     sandboxUI();
 
 }
