@@ -18,8 +18,8 @@ unsigned int mainMenu(void) {
     Sandbox.width = 200;
     Sandbox.height = 50;
 
-    Sandbox.x = uix() - (Sandbox.width / 2);
-    Sandbox.y = uiy() - (Sandbox.height / 2) - 200;
+    Sandbox.x = allUnits[playerID].VECTOR.x - (Sandbox.width / 2);
+    Sandbox.y = allUnits[playerID].VECTOR.y - (Sandbox.height / 2) - 200;
     
     SandboxVec.x = Sandbox.x;
     SandboxVec.y = Sandbox.y;

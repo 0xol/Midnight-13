@@ -43,9 +43,7 @@ int main(void) {
         BeginMode2D(camera);
         ClearBackground(BLACK);
         
-        if (gameMode == notSelected) {
-            gameMode = mainMenu();
-        }
+        if (gameMode == notSelected) {gameMode = mainMenu();}
         
         if (gameMode == quitGame)
         {

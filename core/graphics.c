@@ -27,10 +27,6 @@ void renderTile(struct TILE tile, unsigned int x, unsigned int y) {
     }
 }
 
-void renderMouse(void) {
-    DrawTextureEx(PowerTexture, actualMousePos(), 0, 1, WHITE);
-}
-
 void renderUnit(struct UNIT unit) {
     if (unit.TYPE == PLAYER)
     {
@@ -81,7 +77,6 @@ void playerRenderView(void) {
 
 void graphicsMain(void) {
     playerRenderView();
-    renderMouse();
     renderAllUnits();
     //DrawFPS(allUnits[playerID].VECTOR.x - (screenWidth / 2), allUnits[playerID].VECTOR.y - (screenHeight / 2));
 

@@ -27,6 +27,7 @@ void playerCameraUpdate(void) {
 }
 
 void playerMain(void) {
+    
     if (IsKeyDown(KEY_W)) {allUnits[playerID].VECTOR.y += -playerSpeed;}
     if (IsKeyDown(KEY_S)) {allUnits[playerID].VECTOR.y +=  playerSpeed;}
     if (IsKeyDown(KEY_A)) {allUnits[playerID].VECTOR.x += -playerSpeed;}
