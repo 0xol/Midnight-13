@@ -1,6 +1,10 @@
 #ifndef MACHINE_H
 #define MACHINE_H
 
+//TYPES
+#define CONVEYOR    1
+#define RTG         2
+
 struct machine {
     unsigned short TYPE;
     unsigned short RECIPE;

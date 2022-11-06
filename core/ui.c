@@ -5,6 +5,8 @@
 #include <texture.h>
 #include <stdio.h>
 #include <menu.h>
+#include <machine.h>
+#include <build.h>
 
 Vector2 PowerPos;
 Rectangle PowerRectangle;
@@ -40,8 +42,9 @@ void drawSideBuildMenu(void) {
 
 void drawPowerMenu(void) {if (isMenuOpen == POWER) {
     drawSideBuildMenu();
-    drawBuildMenuIcon(RtgTexture, 0);
     drawBuildMenuIcon(PowerTexture, 1);
+
+    if (CheckCollisionPointRec(actualMousePos(), drawBuildMenuIcon(RtgTexture, 0)) & IsMouseButtonDown(MOUSE_BUTTON_LEFT) == true) {SelectedBuilding = RTG;}
 }}
 
 void sandboxUI(void) {
@@ -56,8 +59,9 @@ void sandboxUI(void) {
 
     DrawTextureEx(PowerTexture, PowerPos, 0, 2, WHITE);
 
-    if (CheckCollisionPointRec(actualMousePos(), PowerRectangle) && IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {isMenuOpen = POWER;}
-    if (IsKeyPressed(KEY_ESCAPE)) {isMenuOpen = NOTOPEN;}
+    if (CheckCollisionPointRec(actualMousePos(), PowerRectangle) & IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {isMenuOpen = POWER;}
+    if (IsKeyPressed(KEY_ESCAPE) & SelectedBuilding == 0) {isMenuOpen = NOTOPEN;}
+    if (IsKeyPressed(KEY_ESCAPE)) {SelectedBuilding = 0;}
     
     drawPowerMenu();
 }

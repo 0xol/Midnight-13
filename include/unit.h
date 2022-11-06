@@ -10,6 +10,7 @@ struct UNIT {
     float ROTATION;
     unsigned int TYPE;
     unsigned int TEAM;
+    unsigned short QUAD;
 };
 
 void unitInit(void);

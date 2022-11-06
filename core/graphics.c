@@ -7,6 +7,7 @@
 #include "../include/map.h"
 #include <math.h>
 #include "../include/menu.h"
+#include <machine.h>
 
 Font BIOS;
 
@@ -24,7 +25,7 @@ void renderTile(struct TILE tile, unsigned int x, unsigned int y) {
     case STONE:
         DrawTextureEx(StoneTexture, tilePos, 0, 2, WHITE);
     break;
-    
+
     default:
         
     break;
