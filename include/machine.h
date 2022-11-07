@@ -25,5 +25,11 @@ struct machine {
     unsigned char PROGRESS;
 };
 
+struct machineTILE {
+    unsigned int machineID;
+    unsigned int TextureID;
+};
+
+
 
 #endif

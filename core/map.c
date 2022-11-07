@@ -1,6 +1,7 @@
 #include "../include/map.h"
 
 struct TILE BACKGROUND[MAPSIZE][MAPSIZE];
+struct TILE FOREGROUND[MAPSIZE][MAPSIZE];
 
 void sandboxGen(void) {
     for (unsigned int y = 0; y != MAPSIZE; y++)

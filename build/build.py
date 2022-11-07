@@ -18,7 +18,7 @@ def linkLinux():
 
 def linkWin():
     print("[LD]  midnight.exe")
-    os.system("gcc bin/*.o -o midnight.exe -lraylib -lws2_32 -lopengl32 -lgdi32 -lwinmm -mwindows -DPLATFORM_DESKTOP -Os")
+    os.system("gcc bin/*.o -o midnight.exe -lraylib -lws2_32 -lopengl32 -lgdi32 -lwinmm -DPLATFORM_DESKTOP -Os")
 
 def compileDir(dir):
     for file in os.listdir(dir):
