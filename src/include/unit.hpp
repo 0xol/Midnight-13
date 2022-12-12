@@ -10,6 +10,7 @@ struct unit {
     unsigned short type;
     unsigned char team;
     unsigned short hp;
+    unsigned short speed;
 };
 
 class unitHandler {
