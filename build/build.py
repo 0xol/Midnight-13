@@ -5,11 +5,11 @@ def compile(filename):
     path = extension[0].split("/")
 
     if extension[1] == "c":
-        os.system("gcc -I include -c " + filename + " -o bin/" + path[-1] + ".o")
+        os.system("gcc -I src/include -c " + filename + " -o bin/" + path[-1] + ".o")
         print("[CC]  " + path[-1] + "." + extension[1])
 
     if extension[1] == "cpp":
-        os.system("g++ -I include -c " + filename + " -o bin/" + path[-1] + ".o")
+        os.system("g++ -I src/include -c " + filename + " -o bin/" + path[-1] + ".o")
         print("[C++] " + path[-1] + "." + extension[1])
 
 def linkLinux():
@@ -29,9 +29,9 @@ def compileDir(dir):
             compile(dir + "/" + file)
 
 def buildLinux():
-    compileDir(os.getcwd() + "/core")
+    compileDir(os.getcwd() + "/src")
     linkLinux()
 
 def buildWin():
-    compileDir(os.getcwd() + "/core")
+    compileDir(os.getcwd() + "/src")
     linkWin()
