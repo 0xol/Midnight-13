@@ -11,11 +11,13 @@ int main(void) {
     renderer r;
     mainLogic m;
 
-    InitWindow(500, 599, "");
-    SetTargetFPS(60);
+    m.init();
+    r.init();
 
-    m.update();
-    r.update();
+    while (!WindowShouldClose()) {
+        m.update();
+        r.update();
+    }
 
     return 0;
 }

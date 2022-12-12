@@ -4,6 +4,7 @@
 class mainLogic {
     public:
         void update(void);
+        void init(void);
 };
 
 #endif

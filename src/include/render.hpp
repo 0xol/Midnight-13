@@ -4,6 +4,7 @@
 class renderer{
     public:
         void update(void);
+        void init(void);
 };
 
 #endif
