@@ -21,4 +21,6 @@ class unitHandler {
         short getFreeUnitID(void);
 };
 
+extern unitHandler u;
+
 #endif

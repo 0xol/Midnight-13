@@ -3,8 +3,6 @@
 
 #include <unit.hpp>
 
-extern unitHandler u;
-
 class mainLogic {
     public:
         void update(void);
