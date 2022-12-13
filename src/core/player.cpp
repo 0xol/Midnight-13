@@ -27,5 +27,4 @@ void player::update(void) {
     if (IsKeyDown(KEY_D)) {u.allUnits[player::unitID].pos.x += PLAYER_MAX_SPEED;}
 
     player::camera.target = u.allUnits[player::unitID].pos;
-
 }

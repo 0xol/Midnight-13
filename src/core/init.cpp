@@ -11,8 +11,8 @@ int main(void) {
     renderer r;
     mainLogic m;
 
-    m.init();
     r.init();
+    m.init();
 
     while (!WindowShouldClose()) {
         m.update();
